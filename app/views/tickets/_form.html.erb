@@ -4,12 +4,12 @@
   <div class="field">
     <%= form.label :user_id %>
     <%= form.number_field :user_id %>
-    <%= form.label :train_number %>
-    <%= form.number_field :train_number %>
-    <%= form.label :first_station_id %>
-    <%= form.number_field :first_station_id %>
-    <%= form.label :last_station_id %>
-    <%= form.number_field :last_station_id %>
+    <%= form.label :train_id, "Номер поезда"%>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+    <%= form.label :first_station_id, "Первая станция" %>
+    <%= form.collection_select :first_station_id, RailwayStation.all, :id, :title%>
+    <%= form.label :last_station_id, "Последняя станция" %>
+    <%= form.collection_select :last_station_id, RailwayStation.all, :id, :title%>
   </div>
 
   <div class="actions">

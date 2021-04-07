@@ -14,9 +14,9 @@
   <% @tickets.each do |ticket| %>
     <tr>
       <td><%= ticket.id%></td>
-      <td><%= ticket.train_number%></td>
-      <td><%= ticket.first_station_id%></td>
-      <td><%= ticket.last_station_id %></td>
+      <td><%= ticket.train.number%></td>
+      <td><%= ticket.first_station.title%></td>
+      <td><%= ticket.last_station.title %></td>
       <td><%= link_to 'Показать билет', ticket %></td>
       <td><%= link_to 'Редактировать билет', edit_ticket_path(ticket) %></td>
       <td><%= link_to 'Удалить билет', ticket, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот билет?' } %></td>
