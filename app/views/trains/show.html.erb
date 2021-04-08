@@ -13,5 +13,14 @@
   <% end %>
 </p>
 
+<% if @train.route.present? %>
+  <p>Поезд двигается по следующему маршруту: </p>
+  <ul>
+    <%= @train.route.name %>
+  </ul>
+<% else %>
+  <p>Поезд пока не едет ни по какому маршруту</p>
+<% end %>
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
