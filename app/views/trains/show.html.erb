@@ -13,6 +13,21 @@
   <% end %>
 </p>
 
+<tbody>
+<p>
+  <% if @train.cars.empty? %>
+    К этому поезду не прикреплены вагоны
+  <% else %>
+  <ul>
+    Список вагонов, которые прицеплены к этому поезду
+    <% @train.cars.each do |car| %>
+      <li><%= link_to "#{car.number}", car_path(car) %>: <%= car.car_type %>, нижних мест <%= car.lower_seats %>, верхних мест <%= car.top_seats %></li>
+    <% end %>
+  </ul>
+<% end %>
+</tbody>
+
+
 <% if @train.route.present? %>
   <p>Поезд двигается по следующему маршруту: </p>
   <ul>
