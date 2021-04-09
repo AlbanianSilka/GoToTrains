@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Car number:</strong>
+  <%= @car.number %>
+</p>
+
+<p>  <strong>Вид вагона:</strong>
+  <% if @car.car_type == 'Плацкарт'%>
+  <p>Плацкартный</p>
+  <%else %>
+    <p>Купешный</p>
+  <% end %>
+</p>
+
+<p>  <strong>Места в вагоне</strong>
+  <% if @car.car_type == 'Плацкарт'%>
+  <p>Верхние плацкартные места: <%= @car.top_seats %></p>
+  <p>Нижние плацкартные места: <%= @car.lower_seats %></p>
+<%else %>
+  <p>Верхние купешные места: <%= @car.top_seats %></p>
+  <p>Нижние купешные места: <%= @car.lower_seats %></p>
+<% end %>
+</p>
+
+
+
+<p>
+  <strong>Номер поезда, к которому прикреплён этот вагон:</strong>
+  <%= @car.current_train.number%>
+</p>
+
+<%= link_to 'Редактировать', edit_car_path(@car) %> |
+<%= link_to 'Вернуться', cars_path %>

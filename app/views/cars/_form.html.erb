@@ -1,0 +1,20 @@
+<%= form_with(model: car) do |form| %>
+  <%= render 'common/errors', resource: @car %>
+
+  <div class="field">
+    <%= form.label "Номер вагона" %>
+    <%= form.number_field :number %>
+    <%= form.label :car_type, "Тип вагона" %>
+    <%= form.select :car_type, Car::TYPES, selected: @car.car_type || 'Плацкарт' %>
+    <%= form.label "Верхние места в вагоне" %>
+    <%= form.number_field :top_seats %>
+    <%= form.label "Нижние места в вагоне" %>
+    <%= form.number_field :lower_seats %>
+    <%= form.label :current_train_id, "Номер поезда, к которому вагон присоединится" %>
+    <%= form.collection_select :current_train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
