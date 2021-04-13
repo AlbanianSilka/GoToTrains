@@ -28,11 +28,5 @@
 
 
 
-
-<p>
-  <strong>Номер поезда, к которому прикреплён этот вагон:</strong>
-  <%= @car.current_train.number%>
-</p>
-
 <%= link_to 'Редактировать', edit_car_path(@car) %> |
 <%= link_to 'Вернуться', cars_path %>

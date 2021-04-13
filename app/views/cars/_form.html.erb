@@ -16,8 +16,8 @@
     <%= form.number_field :lower_seats %>
     <%= form.label "Сидячие места в вагоне" %>
     <%= form.number_field :sitting_seats %>
-    <%= form.label :current_train_id, "Номер поезда, к которому вагон присоединится" %>
-    <%= form.collection_select :current_train_id, Train.all, :id, :number %>
+    <%= form.label :train, "Номер поезда, к которому вагон присоединится" %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="actions">

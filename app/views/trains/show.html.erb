@@ -13,19 +13,16 @@
   <% end %>
 </p>
 
-<tbody>
 <p>
-  <% if @train.cars.empty? %>
-    К этому поезду не прикреплены вагоны
-  <% else %>
-  <ul>
-    Список вагонов, которые прицеплены к этому поезду
-    <% @train.cars.each do |car| %>
-      <li><%= link_to "#{car.number}", car_path(x) %></li>
-    <% end %>
-  </ul>
-<% end %>
-</tbody>
+  <strong>Number:</strong>
+  <%= @train.number %>
+  <strong>Carriages:</strong>
+<ul>
+  <% @train.cars.each do |x|  %>
+    <li><%= link_to "#{x.number}", car_path(x) %></li>
+  <% end %>
+</ul>
+
 
 
 <% if @train.route.present? %>

@@ -6,7 +6,7 @@
   <td><%= car.side_seats_top || "0" %></td>
   <td><%= car.side_seats_bottom || "0" %></td>
   <td><%= car.sitting_seats || "0" %></td>
-  <td><%= car.current_train.number || "0" %></td>
+  <td><%= car.trains_ids.number || "0" %></td>
   <td><%= link_to 'Показать', car %></td>
   <td><%= link_to 'Изменить', edit_car_path(car) %></td>
   <td><%= link_to 'Удалить', car, method: :delete, data: { confirm: 'Вы точно хотите удалить этот вагон?' } %></td>
