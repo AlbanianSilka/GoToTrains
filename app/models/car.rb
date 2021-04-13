@@ -8,4 +8,16 @@ class Car < ActiveRecord::Base
   validates :number, uniqueness: { scope: :current_train_id }
 
   belongs_to :current_train, class_name: 'Train', foreign_key: :current_train_id, optional: true
+
+  before_validation :set_number
+
+  protected
+
+  def set_number
+    self.number ||= max_number + 1
+  end
+
+  def max_number
+    @train.cars.pluck(:number).max || 0
+  end
 end
