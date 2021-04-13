@@ -30,7 +30,7 @@ class CarsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @car.update(cars_path)
+      if @car.update(car_params)
         format.html { redirect_to @car.becomes(Car), notice: 'Car was successfully updated.' }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -40,7 +40,10 @@ class CarsController < ApplicationController
 
   def destroy
     @car.destroy
-    redirect_to cars_path
+    respond_to do |format|
+      format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

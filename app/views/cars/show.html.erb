@@ -8,10 +8,14 @@
 <p>  <strong>Вид вагона:</strong>
   <% if @car.type == 'EconomyCar'%>
   <p>Плацкартный</p>
-  <%else %>
+  <% elsif @car.type == 'CoupeCar'%>
     <p>Купешный</p>
+  <% elsif @car.type == 'SittingCar' %>
+    <p>Сидячий</p>
+  <% else %>
+    <p> Спальный </p>
   <% end %>
-</p>
+
 
 <p>  <strong>Места в вагоне</strong>
   <% if @car.type == 'EconomyCar'%>
@@ -21,7 +25,7 @@
   <p>Верхние купешные места: <%= @car.top_seats %></p>
   <p>Нижние купешные места: <%= @car.lower_seats %></p>
 <% end %>
-</p>
+
 
 
 
