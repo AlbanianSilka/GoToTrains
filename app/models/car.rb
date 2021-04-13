@@ -4,20 +4,21 @@
 class Car < ActiveRecord::Base
   TYPES = %w[CoupeCar EconomyCar SittingCar SleepCar].freeze
 
-  validates :number, :type, presence: true
-  validates :number, uniqueness: { scope: :current_train_id }
 
-  belongs_to :current_train, class_name: 'Train', foreign_key: :current_train_id, optional: true
+  belongs_to :trains_ids, class_name: 'Train', foreign_key: :train_id
 
-  before_validation :set_number
+  validates :train_id, :number, presence: true
+  validates :number, uniqueness: { scope: :train_id }
+
+  before_validation :give_number
 
   protected
 
-  def set_number
+  def give_number
     self.number ||= max_number + 1
   end
 
   def max_number
-    @train.cars.pluck(:number).max || 0
+    Train.find(train_id).cars.pluck(:number).max || 0
   end
 end
