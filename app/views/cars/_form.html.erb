@@ -4,8 +4,8 @@
   <div class="field">
     <%= form.label "Номер вагона" %>
     <%= form.number_field :number %>
-    <%= form.label :car_type, "Тип вагона" %>
-    <%= form.select :car_type, Car::TYPES, selected: @car.car_type || 'Плацкарт' %>
+    <%= form.label :type, "Тип вагона" %>
+    <%= form.select :type, Car::TYPES, selected: @car.type || 'EconomyCar' %>
     <%= form.label "Верхние места в вагоне" %>
     <%= form.number_field :top_seats %>
     <%= form.label "Нижние места в вагоне" %>

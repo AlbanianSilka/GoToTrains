@@ -14,12 +14,12 @@ ActiveRecord::Schema.define(version: 2021_04_13_085501) do
 
   create_table "cars", force: :cascade do |t|
     t.integer "number"
-    t.string "car_type"
     t.integer "top_seats"
     t.integer "lower_seats"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "current_train_id"
+    t.string "type"
     t.integer "side_seats_top"
     t.integer "side_seats_bottom"
     t.integer "sitting_seats"

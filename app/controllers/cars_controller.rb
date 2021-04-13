@@ -2,7 +2,7 @@
 
 # Class for cars buttons
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[show edit update destroy]
+  before_action :find_car, only: %i[show edit update destroy]
 
   def index
     @cars = Car.all
@@ -17,20 +17,24 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
 
-    if @car.save
-      redirect_to @car
-    else
-      render :new
+    respond_to do |format|
+      if @car.save
+        format.html { redirect_to @car.becomes(Car), notice: 'Car was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
   def edit; end
 
   def update
-    if @car.update(car_params)
-      redirect_to @car
-    else
-      render :new
+    respond_to do |format|
+      if @car.update(cars_path)
+        format.html { redirect_to @car.becomes(Car), notice: 'Car was successfully updated.' }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -41,11 +45,12 @@ class CarsController < ApplicationController
 
   private
 
-  def set_car
+  def find_car
     @car = Car.find(params[:id])
   end
 
   def car_params
-    params.require(:car).permit(:car_type, :number, :current_train_id, :top_seats, :lower_seats)
+    params.require(:car).permit(:type, :number, :current_train_id, :top_seats, :lower_seats,
+                                :sitting_seats, :side_seats_top, :side_seats_bottom)
   end
 end

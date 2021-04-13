@@ -1,0 +1,13 @@
+<tr>
+<!--  <td><%#= car.type %></td>-->
+  <td><%= car.number %></td>
+  <td><%= car.top_seats  || "0"%></td>
+  <td><%= car.lower_seats || "0" %></td>
+<!--  <td><%#= car.side_seats_top || "0" %></td>-->
+<!--  <td><%#= car.side_seats_bottom || "0" %></td>-->
+<!--  <td><%#= car.sitting_seats || "0" %></td>-->
+  <td><%= car.current_train.number || "0" %></td>
+  <td><%= link_to 'Show', car %></td>
+  <td><%= link_to 'Edit', edit_car_path(car) %></td>
+  <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

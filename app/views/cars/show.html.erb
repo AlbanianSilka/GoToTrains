@@ -6,7 +6,7 @@
 </p>
 
 <p>  <strong>Вид вагона:</strong>
-  <% if @car.car_type == 'Плацкарт'%>
+  <% if @car.type == 'EconomyCar'%>
   <p>Плацкартный</p>
   <%else %>
     <p>Купешный</p>
@@ -14,7 +14,7 @@
 </p>
 
 <p>  <strong>Места в вагоне</strong>
-  <% if @car.car_type == 'Плацкарт'%>
+  <% if @car.type == 'EconomyCar'%>
   <p>Верхние плацкартные места: <%= @car.top_seats %></p>
   <p>Нижние плацкартные места: <%= @car.lower_seats %></p>
 <%else %>
