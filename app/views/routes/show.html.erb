@@ -16,6 +16,12 @@
   <ul>
     <% @route.railway_stations.each do |station| %>
       <li><%= station.title %></li>
+      <%= form_tag update_position_railway_station_path(station.id), method: :post do %>
+        <%= hidden_field_tag :route_id, @route.id %>
+        <%= label_tag :number %>
+        <%= number_field_tag :number, station.index(@route.id) %>
+        <%= submit_tag 'Save' %>
+      <% end %>
     <% end %>
   </ul>
   <% end %>

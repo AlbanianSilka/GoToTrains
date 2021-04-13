@@ -2,7 +2,7 @@
 
 # Class to control the stations
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: %i[show edit update destroy]
+  before_action :set_railway_station, only: %i[show edit update destroy update_position]
 
   # GET /railway_stations or /railway_stations.json
   def index
