@@ -2,7 +2,7 @@
 
 # Model for a train and his validation
 class Train < ActiveRecord::Base
-  validates :number, presence: true
+  validates :number, presence: true, uniqueness: true
   has_many :cars, foreign_key: :current_train_id
   has_one :trains_route
   has_one :route, through: :trains_route

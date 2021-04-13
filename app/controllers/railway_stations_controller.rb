@@ -48,6 +48,15 @@ class RailwayStationsController < ApplicationController
     end
   end
 
+  def update_position
+    route = Route.find(params[:route_id])
+    if @railway_station.update_position(route, params[:number])
+      redirect_to route_url(route), notice: 'Station index was successfully updated.'
+    else
+      redirect_to route_url(route)
+    end
+  end
+
   # DELETE /railway_stations/1 or /railway_stations/1.json
   def destroy
     @railway_station.destroy
@@ -66,6 +75,6 @@ class RailwayStationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def railway_station_params
-    params.require(:railway_station).permit(:title)
+    params.require(:railway_station).permit(:title, :number)
   end
 end

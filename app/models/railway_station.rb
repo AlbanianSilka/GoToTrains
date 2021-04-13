@@ -2,7 +2,7 @@
 
 # Declaration of Railway Station class and its validation
 class RailwayStation < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
 
   has_many :trains, foreign_key: :current_station_id
   has_many :railway_stations_routes
