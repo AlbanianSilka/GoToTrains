@@ -5,7 +5,7 @@ class RoutesController < ApplicationController
   before_action :set_route, only: %i[show edit update destroy]
 
   def index
-    @routes = Route.all
+    @routes = Route.search(params[:search])
   end
 
   def show; end
