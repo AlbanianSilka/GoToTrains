@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :railway_stations do
     member do
       post :update_position
+      post :update_time
     end
   end
   resources :routes

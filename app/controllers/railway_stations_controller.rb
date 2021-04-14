@@ -2,7 +2,7 @@
 
 # Class to control the stations
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: %i[show edit update destroy update_position]
+  before_action :set_railway_station, only: %i[show edit update destroy update_position update_time]
 
   # GET /railway_stations or /railway_stations.json
   def index
@@ -57,6 +57,16 @@ class RailwayStationsController < ApplicationController
     end
   end
 
+  def update_time
+    route = Route.find(params[:route_id])
+    if @railway_station.update_arrival_time(route, params[:arrival_time]) \
+      && @railway_station.update_departure_time(route, params[:departure_time])
+      redirect_to route_url(route), notice: 'Times were successfully updated.'
+    else
+      redirect_to route_url(route)
+    end
+  end
+
   # DELETE /railway_stations/1 or /railway_stations/1.json
   def destroy
     @railway_station.destroy
@@ -75,6 +85,6 @@ class RailwayStationsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def railway_station_params
-    params.require(:railway_station).permit(:title, :number)
+    params.require(:railway_station).permit(:title, :number, :arrival_time, :departure_time)
   end
 end
