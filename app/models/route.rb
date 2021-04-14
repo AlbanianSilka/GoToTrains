@@ -10,6 +10,7 @@ class Route < ActiveRecord::Base
 
   before_validation :set_name
 
+
   def self.search(search)
     if search
       where(['name LIKE ?', "%#{search}%"])

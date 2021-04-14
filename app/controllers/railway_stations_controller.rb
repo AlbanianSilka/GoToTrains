@@ -6,7 +6,7 @@ class RailwayStationsController < ApplicationController
 
   # GET /railway_stations or /railway_stations.json
   def index
-    @railway_stations = RailwayStation.all
+    @railway_stations = RailwayStation
   end
 
   # GET /railway_stations/1 or /railway_stations/1.json

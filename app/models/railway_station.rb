@@ -14,6 +14,7 @@ class RailwayStation < ActiveRecord::Base
       .order('railway_stations_routes.number').uniq
   }
 
+
   def update_departure_time(route, time)
     st_route = station_route(route)
     st_route&.update(departure_time: time[0])

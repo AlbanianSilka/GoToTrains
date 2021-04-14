@@ -16,7 +16,7 @@
     <%= form.submit %>
   </div>
 <% end %>
-<%= form_tag routes_path, :method => 'post' do %>
+<%= form_tag routes_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Поиск" %>
 <% end %>
