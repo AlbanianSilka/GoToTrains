@@ -19,7 +19,7 @@
   <strong>Carriages:</strong>
 <ul>
   <% @train.cars.each do |x|  %>
-    <li><%= link_to "#{x.number}", car_path(x) %></li>
+    <li><%= link_to "Вагон№#{x.number}", car_path(x) %></li>
   <% end %>
 </ul>
 
