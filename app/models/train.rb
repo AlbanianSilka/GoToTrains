@@ -4,6 +4,7 @@
 class Train < ActiveRecord::Base
   validates :number, presence: true, uniqueness: true
   has_many :cars
+  has_many :tickets
   has_one :trains_route
   has_one :route, through: :trains_route
   belongs_to :current_station, class_name: 'RailwayStation', foreign_key: :current_station_id, optional: true
