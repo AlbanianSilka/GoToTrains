@@ -6,6 +6,9 @@ Rails.application.routes.draw do
       post :update_time
     end
   end
+  resource :search, only: %i[show new edit] do
+    post '/', to: 'searches#search'
+  end
   resources :routes
   resources :tickets
   resources :cars
