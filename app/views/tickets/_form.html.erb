@@ -1,22 +1,24 @@
 <%= form_with(model: ticket) do |form| %>
   <%= render 'common/errors', resource: @ticket %>
 
+
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label :user_first_name, 'Ваше имя' %>
+    <%= form.text_field :user_first_name %>
+    <%= form.label :user_last_name, 'Ваша фамилия' %>
+    <%= form.text_field :user_last_name %>
+    <%= form.label :user_passport, 'Номер вашего паспорта' %>
+    <%= form.number_field :user_passport %>
     <%= form.label :train_id, "Номер поезда"%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
-    <%= form.label :first_station_id, "Первая станция" %>
-    <%= form.collection_select :first_station_id, RailwayStation.all, :id, :title%>
-    <%= form.label :last_station_id, "Последняя станция" %>
-    <%= form.collection_select :last_station_id, RailwayStation.all, :id, :title%>
+    <%= form.label :first_station_id, "Выберите первую станцию" %>
+    <%= form.grouped_collection_select :first_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
+    <%= form.label :first_station_id, "Выберите вторую станцию" %>
+    <%= form.grouped_collection_select :last_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
-<%= form_tag routes_path, :method => 'get' do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Поиск" %>
-<% end %>
+
