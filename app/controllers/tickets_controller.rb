@@ -39,6 +39,7 @@ class TicketsController < ApplicationController
     redirect_to tickets_path
   end
 
+
   private
 
   def set_ticket
@@ -46,6 +47,6 @@ class TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:user_id, :train_id, :first_station_id, :last_station_id)
+    params.require(:ticket).permit(:user_id, :user_passport, :train_id, :first_station_id, :last_station_id, :user_first_name, :user_last_name)
   end
 end
