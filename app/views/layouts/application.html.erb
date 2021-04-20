@@ -13,6 +13,14 @@
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+   <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+    <%= "Привет, #{current_user.first_name} #{current_user.last_name}!"  %>
+  <p>Аккаунт: <%= current_user.email %></p>
+  <% else %>
+   <%= link_to "Войти", new_user_session_path %>
+  <% end %>
+
   <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
