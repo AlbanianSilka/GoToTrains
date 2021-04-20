@@ -4,7 +4,7 @@
 class CreateTickets < ActiveRecord::Migration[6.1]
   def change
     create_table :tickets do |t|
-      t.integer :user_id
+      t.belongs_to :user, index: true
       t.integer :train_id
       t.integer :first_station_id
       t.integer :last_station_id
