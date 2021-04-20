@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tickets</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Номер билета Номер поезда Начальная станция Конечная станция</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.id%></td>
+      <td><%= ticket.train.number%></td>
+      <td><%= ticket.first_station.title%></td>
+      <td><%= ticket.last_station.title %></td>
+      <td><%= link_to 'Показать билет', ticket %></td>
+      <td><%= link_to 'Редактировать билет', edit_admin_ticket_path(ticket) %></td>
+      <td><%= link_to 'Удалить билет', admin_ticket_path(ticket), method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот билет?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Добавить билет', new_admin_ticket_path %>
