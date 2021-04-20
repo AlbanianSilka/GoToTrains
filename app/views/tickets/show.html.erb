@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Ticket id:</strong>
-  <%= @ticket.id %>
+  <strong>Билет купил:</strong>
+  <%= @ticket.user_last_name%>
+  <%= @ticket.user_first_name%>
 </p>
 
 <%= link_to 'Редактировать', edit_ticket_path(@ticket) %> |

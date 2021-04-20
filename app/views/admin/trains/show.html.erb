@@ -16,12 +16,16 @@
 <p>
   <strong>Number:</strong>
   <%= @train.number %>
-  <strong>Carriages:</strong>
+  <strong>Cars:</strong>
 <ul>
   <% @train.cars.each do |x|  %>
-    <li><%= link_to "Вагон№#{x.number}", car_path(x) %></li>
+    <li><%= link_to "Вагон№#{x.number}", admin_car_path(x) %></li>
   <% end %>
 </ul>
+<p><%= link_to 'Прицепить новый вагон', new_admin_train_car_path(@train) %></p>
+<%= link_to 'Список всех вагонов', admin_train_cars_url(@train)%>
+
+
 
 
 
@@ -34,5 +38,5 @@
   <p>Поезд пока не едет ни по какому маршруту</p>
 <% end %>
 
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>

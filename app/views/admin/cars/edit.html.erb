@@ -1,0 +1,6 @@
+<h1>Редактирование вагона</h1>
+
+<%= render 'form', cars: @car.becomes(Car), train: @train %>
+
+<%= link_to 'Показать', car: @car.becomes(Car) %> |
+<%= link_to 'Вернуться', admin_car_path(@car) %>

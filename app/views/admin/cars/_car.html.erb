@@ -11,7 +11,7 @@
     <% else %>
     <td><%= car.trains_ids.number || "0" %></td>
   <% end %>
-    <td><%= link_to 'Показать', car %></td>
-  <td><%= link_to 'Изменить', edit_car_path(car) %></td>
-  <td><%= link_to 'Удалить', car, method: :delete, data: { confirm: 'Вы точно хотите удалить этот вагон?' } %></td>
+    <td><%= link_to 'Показать', [:admin, car] %></td>
+  <td><%= link_to 'Изменить', edit_admin_car_path(car) %></td>
+  <td><%= link_to 'Удалить', [:admin, car], method: :delete, data: { confirm: 'Вы точно хотите удалить этот вагон?' } %></td>
 </tr>
