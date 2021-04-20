@@ -4,9 +4,9 @@
 
   <div class="field">
     <%= form.label :user_first_name, 'Ваше имя' %>
-    <%= form.text_field :user_first_name %>
+    <%= form.collection_select :user_first_name, User.where(first_name: @user_first_name), :first_name, :first_name %>
     <%= form.label :user_last_name, 'Ваша фамилия' %>
-    <%= form.text_field :user_last_name %>
+    <%= form.collection_select :user_last_name, User.where(last_name: @user_last_name), :last_name, :last_name %>
     <%= form.label :user_passport, 'Номер вашего паспорта' %>
     <%= form.number_field :user_passport %>
     <%= form.label :train_id, "Номер поезда"%>
