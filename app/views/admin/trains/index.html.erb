@@ -11,10 +11,13 @@
   </thead>
 
   <tbody>
-    <%= render @trains %>
+  <% @trains.each do |train| %>
+    <%= render train %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Train', new_train_path %>
+<%= link_to 'New Train', new_admin_train_path %>
+<%= link_to 'Назад', welcome_index_path %>
