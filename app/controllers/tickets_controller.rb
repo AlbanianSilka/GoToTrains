@@ -2,8 +2,9 @@
 
 # Class for tickets buttons
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: %i[show edit update destroy]
+  before_action :set_ticket, only: %i[show update destroy]
   before_action :authenticate_user!, only: :create
+  before_action :set_user_name
 
   def index
     @tickets = Ticket.all
@@ -13,6 +14,7 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
+    @user_id = current_user.id
   end
 
   def create
@@ -25,7 +27,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  def edit; end
 
   def update
     if @ticket.update(ticket_params)
@@ -42,6 +43,12 @@ class TicketsController < ApplicationController
 
 
   private
+
+  def set_user_name
+    @user_first_name = current_user.first_name
+    @user_last_name = current_user.last_name
+    @user_id = current_user.id
+  end
 
   def set_ticket
     @ticket = Ticket.find(params[:id])
