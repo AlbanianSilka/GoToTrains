@@ -2,5 +2,5 @@
 
 <%= render 'form', cars: @car.becomes(Car), train: @train %>
 
-<%= link_to 'Показать', car: @car.becomes(Car) %> |
-<%= link_to 'Вернуться', admin_car_path(@car) %>
+<%= link_to t('common.edit'), car: @car.becomes(Car) %> |
+<%= link_to t('common.back'), admin_car_path(@car) %>

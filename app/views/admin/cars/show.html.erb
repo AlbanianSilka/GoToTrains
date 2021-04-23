@@ -1,32 +1,38 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Car number:</strong>
+  <strong><%= t('admin.cars.form.car_number') %></strong>
   <%= @car.number %>
 </p>
 
-<p>  <strong>Вид вагона:</strong>
+<p>  <strong><%= t('admin.cars.form.car_type') %></strong>
   <% if @car.type == 'EconomyCar'%>
-  <p>Плацкартный</p>
+  <p><%= t('.economy_car') %></p>
   <% elsif @car.type == 'CoupeCar'%>
-    <p>Купешный</p>
+    <p><%= t('.coupe_car') %></p>
   <% elsif @car.type == 'SittingCar' %>
-    <p>Сидячий</p>
+    <p><%= t('.sitting_car') %></p>
   <% else %>
-    <p> Спальный </p>
+    <p><%= t('.sleeping_car') %> </p>
   <% end %>
 
 
-<p>  <strong>Места в вагоне</strong>
+<p>  <strong><%= t('.car_seats') %></strong>
   <% if @car.type == 'EconomyCar'%>
-  <p>Верхние плацкартные места: <%= @car.top_seats %></p>
-  <p>Нижние плацкартные места: <%= @car.lower_seats %></p>
+  <p><%= t('admin.cars.form.car_top_seats') %><%= @car.top_seats %></p>
+  <p><%= t('admin.cars.form.car_lower_seats') %> <%= @car.lower_seats %></p>
+  <p><%= t('admin.cars.form.car_side_seats_top') %> <%= @car.side_seats_top %></p>
+  <p><%= t('admin.cars.form.car_side_seats_bottom') %><%= @car.side_seats_bottom %></p>
+<% elsif @car.type == 'CoupeCar'%>
+  <p><%= t('admin.cars.form.car_top_seats') %> <%= @car.top_seats %></p>
+  <p><%= t('admin.cars.form.car_lower_seats') %><%= @car.lower_seats %></p>
+<% elsif @car.type == 'SittingCar'%>
+  <p><%= t('admin.cars.form.car_sitting_seats') %><%= @car.sitting_seats %></p>
 <%else %>
-  <p>Верхние купешные места: <%= @car.top_seats %></p>
-  <p>Нижние купешные места: <%= @car.lower_seats %></p>
+  <p><%= t('admin.cars.form.car_lower_seats') %><%= @car.lower_seats %></p>
 <% end %>
 
 
 
-<%= link_to 'Редактировать', edit_admin_car_path(@car) %> |
-<%= link_to 'Вернуться', admin_train_path(@car.train_id) %>
+<%= link_to t('common.edit'), edit_admin_car_path(@car) %> |
+<%= link_to t('common.back'), admin_train_path(@car.train_id) %>
