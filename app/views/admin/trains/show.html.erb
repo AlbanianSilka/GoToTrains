@@ -1,42 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong><%= t('activerecord.attributes.train.number') %></strong>
   <%= @train.number %>
 </p>
 <p>
-  <strong>На станции: </strong>
+  <strong><%= t('.on_station') %></strong>
   <% if @train.current_station.present? %>
     <%= @train.current_station.title %>
   <% else %>
-    Не указано
+    Не вказано
   <% end %>
 </p>
 
 <p>
-  <strong>Number:</strong>
-  <%= @train.number %>
   <strong>Cars:</strong>
 <ul>
   <% @train.cars.each do |x|  %>
     <li><%= link_to "Вагон№#{x.number}", admin_car_path(x) %></li>
   <% end %>
 </ul>
-<p><%= link_to 'Прицепить новый вагон', new_admin_train_car_path(@train) %></p>
-<%= link_to 'Список всех вагонов', admin_train_cars_url(@train)%>
+<p><%= link_to 'Причепити новий вагон', new_admin_train_car_path(@train) %></p>
+<%= link_to 'Список усіх вагонів', admin_train_cars_url(@train)%>
 
 
 
 
 
 <% if @train.route.present? %>
-  <p>Поезд двигается по следующему маршруту: </p>
+  <p><%= t('.train_route') %></p>
   <ul>
     <%= @train.route.name %>
   </ul>
 <% else %>
-  <p>Поезд пока не едет ни по какому маршруту</p>
+  <p><%= t('.no_route') %></p>
 <% end %>
 
-<%= link_to 'Edit', edit_admin_train_path(@train) %> |
-<%= link_to 'Back', admin_trains_path %>
+<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
+<%= link_to t('common.back'), admin_trains_path %>

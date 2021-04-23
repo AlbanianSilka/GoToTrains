@@ -7,17 +7,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :current_station_id, "Текущая станция"%>
+    <%= form.label :current_station_id, t('activerecord.attributes.train.current_station_id')%>
     <%= form.collection_select :current_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= form.label :direction %>
+    <%= form.label :direction, t('.direction') %>
     <%= form.check_box :direction %>
   </div>
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.submit', action: @train.new_record? ? 'Створити' : 'Відредагувати') %>
   </div>
 <% end %>
