@@ -1,27 +1,58 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>GoToTrains</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "GoToTrains" %></title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <!-- For all other devices -->
+  <!-- Size should be 32 x 32 pixels -->
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <% if user_signed_in? %>
-   <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
-    <%= "Привет, #{current_user.first_name} #{current_user.last_name}!"  %>
-  <p>Аккаунт: <%= current_user.email %></p>
-  <% else %>
-   <%= link_to "Войти", new_user_session_path %>
-  <% end %>
 
-  <%= yield %>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">GoToTrains</a>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <% if user_signed_in? %>
+          <li><%= button_to "Вийти", destroy_user_session_path, method: :delete  %></li>
+          <% if current_user.admin? %>
+            <li><%= link_to "Сторінка адміністратора", admin_railway_stations_path  %></li>
+            <% end %>
+          <% else %>
+          <li><%= link_to "Увійти", new_user_session_path  %></li>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+  </div><!--/row-->
+
     <%= render 'layouts/footer' %>
-  </body>
+
+</div> <!-- /container -->
+
+</body>
 </html>
