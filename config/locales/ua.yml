@@ -1,0 +1,86 @@
+ua:
+  common:
+    save: 'Зберігти'
+    hello: 'Привіт, '
+    sign_in: 'Увійти'
+    sign_out: 'Вийти'
+    admin: 'адміністратор'
+    back: 'Назад'
+    edit: 'Відредагувати'
+    errors: 'Під час заповнення форми виникла помилка'
+  tickets:
+    ticket_show_form: 'Номер квитка Номер поїзду Початка станція Кінцева станція'
+  admin:
+    welcome:
+      index:
+        admin_title: 'Сторінка адміністратора'
+        train_list: 'Список потягів'
+        routes_list: 'Список маршрутів'
+        station_list: 'Список станцій'
+        ticket_list: 'Список квитків'
+    routes:
+      show:
+        no_stations: 'На цьому маршруті станцій немає'
+        stations_on_route: 'Станції на маршруті: '
+        departure_time: 'Час відправлення:'
+        arrival_time: 'Час прибуття:'
+        update_time: 'Зберігти час'
+        trains_on_route: 'Потяги на маршруті:'
+        route_no_trains: 'На цьому маршруті потягів немає'
+        current_times: 'Час: '
+      index:
+        plural: 'Список маршрутів'
+        route_name: 'Назва маршруту'
+        new: 'Створити маршрут'
+      new:
+        title: 'Новий маршрут'
+      form:
+        sumbit: '%{action} маршрут'
+    trains:
+      index:
+        new: 'Новий потяг'
+      show:
+        no_route: 'Потяг поки що не прямує ніяким маршрутом'
+        train_route: 'Потяг прямує за наступним маршрутом:'
+        on_station: 'Зараз на станції:'
+      plural: 'Список поїздів'
+      form:
+        submit: '%{action} потяг'
+        direction: 'Відлік від хвоста поїзда'
+    tickets:
+      show:
+        bought_by: 'Квиток придбав: '
+      first_name: " Ім'я користувача: "
+      last_name: 'Прізвище користувача: '
+      passport_number: 'Номер паспорту користувача: '
+      first_station: 'Перша станція: '
+      last_station: 'Кінцева станція: '
+      ticket_train_number: 'Номер поїзду: '
+      user_buy_ticket: 'Купити квиток'
+      user_tickets: 'Ваші квитки'
+    railway_stations:
+      plural: 'Залізничні станції'
+      index:
+        new: 'Створити станцію'
+      new:
+        title: 'Нова станція'
+      form:
+        submit: '%{action} станцію'
+    cars:
+      new:
+        title: 'Новий вагон'
+      form:
+        car_type: 'Тип вагону: '
+        car_number: 'Номер вагону: '
+        car_top_seats: 'Верхні місця: '
+        car_lower_seats: 'Нижні місця: '
+        car_side_seats_top: 'Бокові верхні місця: '
+        car_side_seats_bottom: 'Бокові нижні місця: '
+        car_sitting_seats: 'Сидячі місця: '
+        attach_train: 'Номер потягу, до якого приєднають цей вагон: '
+      show:
+        economy_car: 'Плацкарт'
+        coupe_car: 'Купе'
+        sitting_car: 'Сидячий'
+        sleeping_car: 'Спальний'
+        car_seats: 'Місця у вагоні:'
