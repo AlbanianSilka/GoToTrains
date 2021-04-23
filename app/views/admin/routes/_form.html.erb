@@ -17,16 +17,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :railway_station_ids, "Привязанные станции"%>
+    <%= form.label :railway_station_ids, t('admin.routes.show.stations_on_route')%>
     <%= form.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true} %>
   </div>
 
   <div class="field">
-    <%= form.label :train_ids, "Поезда на маршруте"%>
+    <%= form.label :train_ids, t('admin.routes.show.trains_on_route')%>
     <%= form.collection_select :train_ids, Train.all, :id, :number, {}, { multiple: true} %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.sumbit', action: @route.new_record? ? 'Створити' : 'Відредагувати')%>
   </div>
 <% end %>

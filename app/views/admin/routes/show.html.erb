@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Станции в маршруте:</strong>
+  <strong><%= t('.stations_on_route') %></strong>
 </p>
 
 <li>
 <p>
   <% if @route.railway_stations.empty? %>
-    На этом маршруте станций нет
+    <%= t('.no_stations') %>
   <% else %>
   <ul>
     <% @route.railway_stations.ordered.each do |station| %>
@@ -21,16 +21,16 @@
         <%= hidden_field_tag :route_id, @route.id %>
         <%= label_tag :number %>
         <%= number_field_tag :number, station.index(@route.id) %>
-        <%= submit_tag 'Save' %>
+        <%= submit_tag t('common.save') %>
       <% end %>
       <%= form_tag update_time_admin_railway_station_path(station.id), method: :post do %>
         <%= hidden_field_tag :route_id, @route.id %>
-        <%= label_tag :departure_time %>
+        <%= label_tag :departure_time, t('.departure_time') %>
         <%= datetime_local_field :departure_time, station.departure_time(@route.id) %>
-        <%= label_tag :arrival_time %>
+        <%= label_tag :arrival_time, t('.arrival_time') %>
         <%= datetime_local_field :arrival_time, station.arrival_time(@route.id) %>
-        <%= label_tag "Current times: #{station.departure_time(@route.id)} - #{station.arrival_time(@route.id)}" %>
-        <%= submit_tag 'Update time' %>
+        <%= label_tag "#{t('.current_times')} #{station.departure_time(@route.id)} - #{station.arrival_time(@route.id)}" %>
+        <%= submit_tag t('.update_time') %>
       <% end %>
     <% end %>
   </ul>
@@ -39,12 +39,12 @@
 
 
 <p>
-  <strong>Поезда на маршруте:</strong>
+  <strong><%= t('.trains_on_route') %></strong>
 </p>
 
 <p>
   <% if @route.trains.empty? %>
-    На этом маршруте поездов нет
+    <%= t('.route_no_trains') %>
   <% else %>
   <ul>
     <% @route.trains.each do |train| %>
@@ -54,5 +54,5 @@
 <% end %>
 
 
-<%= link_to 'Редактировать', edit_admin_route_path(@route) %> |
-<%= link_to 'Вернуться', admin_routes_path %>
+<%= link_to t('common.edit'), edit_admin_route_path(@route) %> |
+<%= link_to t('common.back'), admin_routes_path %>
