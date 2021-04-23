@@ -2,5 +2,5 @@
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Показать', @ticket %> |
-<%= link_to 'Вернуться', admin_tickets_path %>
+<%= link_to t('common.edit'), @ticket %> |
+<%= link_to t('common.back'), admin_tickets_path %>

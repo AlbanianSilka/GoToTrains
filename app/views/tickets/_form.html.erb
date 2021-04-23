@@ -9,17 +9,17 @@
 
   <div class="field">
     <label class="hidden"> <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :id %> </label>
-    <%= form.label :user_first_name, 'Ваше имя' %>
+    <%= form.label :user_first_name, t('admin.tickets.first_name') %>
     <%= form.collection_select :user_first_name, User.where(first_name: @user_first_name), :first_name, :first_name %>
-    <%= form.label :user_last_name, 'Ваша фамилия' %>
+    <%= form.label :user_last_name, t('admin.tickets.last_name') %>
     <%= form.collection_select :user_last_name, User.where(last_name: @user_last_name), :last_name, :last_name %>
-    <%= form.label :user_passport, 'Номер вашего паспорта' %>
+    <%= form.label :user_passport, t('admin.tickets.passport_number') %>
     <%= form.number_field :user_passport %>
-    <%= form.label :train_id, "Номер поезда"%>
+    <%= form.label :train_id, t('admin.tickets.ticket_train_number')%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
-    <%= form.label :first_station_id, "Выберите первую станцию" %>
+    <%= form.label :first_station_id, t('admin.tickets.first_station') %>
     <%= form.grouped_collection_select :first_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
-    <%= form.label :first_station_id, "Выберите вторую станцию" %>
+    <%= form.label :first_station_id, t('admin.tickets.last_station') %>
     <%= form.grouped_collection_select :last_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
   </div>
 
