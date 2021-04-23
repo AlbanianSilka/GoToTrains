@@ -1,11 +1,9 @@
-<h1>Стартовая страница</h1>
+<h1><%= t('admin.welcome.index.admin_title') %></h1>
 
-<%= link_to 'Список станций', admin_railway_stations_path %>
+<%= link_to t('admin.welcome.index.station_list'), admin_railway_stations_path %>
 <h1> </h1>
-<%= link_to 'Список поездов', admin_trains_path %>
+<%= link_to t('admin.welcome.index.train_list'), admin_trains_path %>
 <h1> </h1>
-<%= link_to 'Список маршрутов', admin_routes_path %>
+<%= link_to t('admin.welcome.index.routes_list'), admin_routes_path %>
 <h1> </h1>
-<%= link_to 'Список билетов', admin_tickets_path %>
-<!--<h1> </h1>-->
-<%#= link_to 'Список вагонов', admin_cars_path %>
+<%= link_to t('admin.welcome.index.ticket_list'), admin_tickets_path %>
