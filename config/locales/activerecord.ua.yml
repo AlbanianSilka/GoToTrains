@@ -1,0 +1,39 @@
+ua:
+  activerecord:
+    destroy_confirm: 'Ви впевнені?'
+    models:
+      user: 'Користувач'
+      current_user: 'Користувач'
+      railway_station: 'Станція'
+      train: 'Потяг'
+      route: 'Маршрут'
+      railway_station_route: 'Маршрут'
+      car: 'Вагон'
+      admin:
+      tickets: 'Квиток'
+       attributes:
+         user: 'Користувач'
+    attributes:
+      show: 'Показати'
+      edit: 'Відредагувати'
+      destroy: 'Видалити'
+      railway_station:
+        title: 'Назва'
+      train:
+        number: 'Номер'
+        current_station_id: 'Поточна станція'
+      route:
+        name: 'Назва'
+
+    errors:
+      messages:
+        blank: 'не може бути пустим полем!'
+      models:
+        railway_station:
+          attributes:
+            title:
+              blank: 'не може бути пустою!'
+        routes:
+          attributes:
+            name:
+              blank: 'не може бути пустим!'

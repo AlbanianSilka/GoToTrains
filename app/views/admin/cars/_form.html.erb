@@ -1,0 +1,40 @@
+<%= form_with(model: [:admin, train, @car.becomes(Car)]) do |form| %>
+  <%= render 'common/errors', resource: @car %>
+
+  <div class="field">
+    <%= form.label t('.car_number') %>
+    <%= form.number_field :number %>
+  </div>
+  <div class="field choose">
+    <%= form.label :type, t('.car_type') %>
+    <%= form.select :type, Car::TYPES, selected: @car.type || 'EconomyCar' %>
+  </div>
+  <div class="field top_seats seats">
+    <%= form.label t('.car_top_seats') %>
+    <%= form.number_field :top_seats %>
+  </div>
+  <div class="field top_side_seats seats">
+    <%= form.label t('.car_side_seats_top') %>
+    <%= form.number_field :side_seats_top %>
+  </div>
+  <div class="field bottom_side_seats seats">
+    <%= form.label t('.car_side_seats_bottom') %>
+    <%= form.number_field :side_seats_bottom %>
+  </div>
+  <div class="field bottom_seats seats">
+    <%= form.label t('.car_lower_seats') %>
+    <%= form.number_field :lower_seats %>
+  </div>
+  <div class="field sitting_seats seats">
+    <%= form.label t('.car_sitting_seats') %>
+    <%= form.number_field :sitting_seats %>
+  </div>
+  <div class="field">
+    <%= form.label :train, t('.attach_train') %>
+    <%= form.collection_select :train_id, Train.all, :id, :number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

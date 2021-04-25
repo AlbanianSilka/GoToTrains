@@ -1,0 +1,6 @@
+<tr>
+  <td><%= railway_station.title %></td>
+  <td><%= link_to t('activerecord.attributes.show'), [:admin, railway_station] %></td>
+  <td><%= link_to t('activerecord.attributes.edit'), edit_admin_railway_station_path(railway_station) %></td>
+  <td><%= link_to t('activerecord.attributes.destroy'), [:admin, railway_station], method: :delete, data: { confirm: t('activerecord.destroy_confirm') } %></td>
+</tr>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('.bought_by') %></strong>
+  <%= @ticket.user_last_name%>
+  <%= @ticket.user_first_name%>
+</p>
+
+<%= link_to t('common.back'), admin_tickets_path %>

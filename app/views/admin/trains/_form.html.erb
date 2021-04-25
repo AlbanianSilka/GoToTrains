@@ -1,0 +1,23 @@
+<%= form_with(model: [:admin, train]) do |form| %>
+  <%= render 'common/errors', resource: @train%>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_station_id, t('activerecord.attributes.train.current_station_id')%>
+    <%= form.collection_select :current_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direction, t('.direction') %>
+    <%= form.check_box :direction %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit t('.submit', action: @train.new_record? ? 'Створити' : 'Відредагувати') %>
+  </div>
+<% end %>

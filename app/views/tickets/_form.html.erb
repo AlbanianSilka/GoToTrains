@@ -1,18 +1,30 @@
 <%= form_with(model: ticket) do |form| %>
   <%= render 'common/errors', resource: @ticket %>
+  <style>
+    .hidden {
+        display: none;
+    }
+  </style>
+
 
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-    <%= form.label :train_id, "Номер поезда"%>
+    <label class="hidden"> <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :id %> </label>
+    <%= form.label :user_first_name, "Ваше ім'я" %>
+    <%= form.collection_select :user_first_name, User.where(first_name: @user_first_name), :first_name, :first_name %>
+    <%= form.label :user_last_name, 'Ваше прізвище' %>
+    <%= form.collection_select :user_last_name, User.where(last_name: @user_last_name), :last_name, :last_name %>
+    <%= form.label :user_passport, 'Номер вашого паспорту' %>
+    <%= form.number_field :user_passport %>
+    <%= form.label :train_id, 'Номер поїзду'%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
-    <%= form.label :first_station_id, "Первая станция" %>
-    <%= form.collection_select :first_station_id, RailwayStation.all, :id, :title%>
-    <%= form.label :last_station_id, "Последняя станция" %>
-    <%= form.collection_select :last_station_id, RailwayStation.all, :id, :title%>
+    <%= form.label :first_station_id, 'Ваша перша станція' %>
+    <%= form.grouped_collection_select :first_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
+    <%= form.label :first_station_id, 'Ваша друга станція' %>
+    <%= form.grouped_collection_select :last_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Купити' %>
   </div>
 <% end %>
+
