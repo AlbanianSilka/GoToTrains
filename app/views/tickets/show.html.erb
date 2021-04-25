@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong><%= t('admin.tickets.show.bought_by') %></strong>
+  <strong>Квиток придбав:</strong>
   <%= @ticket.user_last_name%>
   <%= @ticket.user_first_name%>
 </p>
 
-<%= link_to t('common.back'), tickets_path %>
+<%= link_to 'Назад', tickets_path %>
