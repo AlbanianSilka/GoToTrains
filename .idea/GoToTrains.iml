@@ -658,6 +658,36 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="libv8 (vbundled(3.16.14.19)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/vendor" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/patches" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/release" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/vendor" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/patches" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/release" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/spec" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/patches" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/libv8-3.16.14.19/release" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="listen (vbundled(3.5.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1290,6 +1320,25 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="ref (vbundled(2.0.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ref-2.0.0/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ref-2.0.0/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ref-2.0.0/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ref-2.0.0/lib" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/ref-2.0.0/ext" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="regexp_parser (vbundled(2.1.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -1477,6 +1526,28 @@
         <SOURCES>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/sprockets-rails-3.2.2/lib" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="therubyracer (vbundled(0.12.3)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/spec" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/spec" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/ext" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.6.0/gems/therubyracer-0.12.3/spec" />
+        </excluded>
       </library>
     </orderEntry>
     <orderEntry type="module-library">

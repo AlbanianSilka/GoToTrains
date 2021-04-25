@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
-# gem 'therubyracer'
+gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
