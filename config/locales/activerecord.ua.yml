@@ -2,11 +2,17 @@ ua:
   activerecord:
     destroy_confirm: 'Ви впевнені?'
     models:
+      user: 'Користувач'
+      current_user: 'Користувач'
       railway_station: 'Станція'
       train: 'Потяг'
       route: 'Маршрут'
       railway_station_route: 'Маршрут'
       car: 'Вагон'
+      admin:
+      tickets: 'Квиток'
+       attributes:
+         user: 'Користувач'
     attributes:
       show: 'Показати'
       edit: 'Відредагувати'
