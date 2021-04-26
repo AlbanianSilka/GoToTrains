@@ -1,11 +1,11 @@
-<%= form_with(model: [:admin, railway_station]) do |form| %>
-  <%= render 'common/errors', resource: @railway_station %>
+<%= form_with(model: [:admin, station]) do |form| %>
+  <%= render 'common/errors', resource: station %>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <div class="actions">
-    <%= form.submit t('.submit', action: @railway_station.new_record? ? 'Створити' : 'Відредагувати')%>
+    <%= form.submit t('.submit', action: station.new_record? ? 'Створити' : 'Відредагувати')%>
   </div>
 <% end %>
