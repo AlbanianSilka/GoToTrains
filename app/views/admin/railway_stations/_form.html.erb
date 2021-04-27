@@ -1,11 +1,12 @@
-<%= form_with(model: [:admin, station]) do |form| %>
+<%= hidden = false unless local_assigns[:hidden] %>
+<%= form_for [:admin, station], html: { style: "display: #{hidden ? 'none' : 'block'}" } do |f| %>
   <%= render 'common/errors', resource: station %>
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
   <div class="actions">
-    <%= form.submit t('.submit', action: station.new_record? ? 'Створити' : 'Відредагувати')%>
+    <%= f.submit t('.submit', action: station.new_record? ? 'Створити' : 'Відредагувати') %>
   </div>
 <% end %>
