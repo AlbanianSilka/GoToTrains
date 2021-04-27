@@ -1,9 +1,7 @@
+
 class SearchesController < ApplicationController
+  before_action :authenticate_user!
   def show
     @stations = RailwayStation.all
-  end
-
-  def create
-    redirect_to search_path
   end
 end
