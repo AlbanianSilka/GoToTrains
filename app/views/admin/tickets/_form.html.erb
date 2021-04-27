@@ -3,21 +3,21 @@
 
 
   <div class="field">
-    <%= form.label :user_first_name, 'Имя пользователя' %>
+    <%= form.label :user_first_name, t('admin.tickets.first_name') %>
     <%= form.text_field :user_first_name%>
-    <%= form.label :user_last_name, 'Фамилия пользователя' %>
+    <%= form.label :user_last_name, t('admin.tickets.last_name') %>
     <%= form.text_field :user_last_name%>
-    <%= form.label :user_passport, 'Номер паспорта пользователя' %>
+    <%= form.label :user_passport, t('admin.tickets.passport_number') %>
     <%= form.number_field :user_passport %>
-    <%= form.label :train_id, "Номер поезда"%>
+    <%= form.label :train_id, t('activerecord.attributes.train.number')%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
-    <%= form.label :first_station_id, "Первая станция" %>
+    <%= form.label :first_station_id, t('admin.tickets.first_station') %>
     <%= form.grouped_collection_select :first_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
-    <%= form.label :first_station_id, "Вторая станция" %>
+    <%= form.label :first_station_id, t('admin.tickets.last_station') %>
     <%= form.grouped_collection_select :last_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t('.sumbit') %>
   </div>
 <% end %>
