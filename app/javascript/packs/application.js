@@ -9,6 +9,10 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 require('jquery')
 require('packs/search')
+require('packs/railway_stations')
+require('packs/routes')
+require('packs/trains')
+require('packs/cars')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
