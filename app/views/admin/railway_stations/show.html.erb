@@ -6,15 +6,14 @@
 </p>
 
 <% if @railway_station.routes.empty? %>
-  <p>Станция не входит ни в один маршрут</p>
+  <p><%= t('.no_routes') %></p>
 <% else %>
-  <p>Станция входит в следующие маршруты</p>
+  <p><%= t('.routes') %></p>
   <ul>
     <% @railway_station.routes.each do |route| %>
       <li><%= route.name %></li>
     <% end %>
   </ul>
 <% end %>
-
-<%= link_to 'Edit', edit_admin_railway_station_path(@railway_station) %> |
-<%= link_to 'Back', admin_railway_stations_path %>
+<%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station) %> |
+<%= link_to t('common.back'), admin_railway_stations_path %>
