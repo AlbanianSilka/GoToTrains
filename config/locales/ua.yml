@@ -1,5 +1,8 @@
 ua:
   common:
+    cancel: 'Відмінити'
+    destroy: 'Видалити'
+    show: 'Показити'
     save: 'Зберігти'
     hello: 'Привіт, '
     sign_in: 'Увійти'
@@ -48,6 +51,11 @@ ua:
         submit: '%{action} потяг'
         direction: 'Відлік від хвоста поїзда'
     tickets:
+      index:
+        title: 'Управління квитками'
+        new: 'Створити квиток'
+      form:
+        sumbit: 'Створити квиток'
       show:
         bought_by: 'Квиток придбав: '
       first_name: " Ім'я користувача: "
@@ -66,6 +74,9 @@ ua:
         title: 'Нова станція'
       form:
         submit: '%{action} станцію'
+      show:
+        no_routes: 'Ця станція не входить до жодного маршруту.'
+        routes: 'Ця станція входить до наступних маршрутів: '
     cars:
       new:
         title: 'Новий вагон'
