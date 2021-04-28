@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function () {
 
     console.log("This is working");
 
-document.getElementById("menu").addEventListener("click", openMenu);
+$("#menu").on("click", openMenu);
 
 function openMenu() {
 
