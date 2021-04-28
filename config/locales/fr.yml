@@ -1,0 +1,98 @@
+fr:
+  common:
+    cancel: 'Annuler'
+    destroy: 'Effacer'
+    show: 'Spectacle'
+    save: 'Sauvegarder'
+    hello: 'Bonjour, '
+    sign_in: "S'identifier"
+    sign_out: "Se déconnecter "
+    admin: 'Admin'
+    back: 'Revenir'
+    edit: 'Éditer'
+    errors: "Une erreur s'est produite lors du remplissage du formulaire "
+    admin_page: 'Admin page'
+  tickets:
+    ticket_show_form: "Numéro de billet Numéro de train Première station Dernière station"
+  admin:
+    welcome:
+      index:
+        admin_title: 'Admin page'
+        train_list: 'Liste des trains '
+        routes_list: "Liste des itinéraires de train "
+        station_list: 'Liste des gares'
+        ticket_list: 'Liste des billets'
+    routes:
+      show:
+        no_stations: "Il n'y a pas de gare sur cet itinéraire de train"
+        stations_on_route: "Gares sur l'itinéraire de train: "
+        departure_time: 'Heure de départ:'
+        arrival_time: "Heure d'arrivée:"
+        update_time: 'Temps de mise à jour'
+        trains_on_route: "Trains sur l'itinéraire de train: "
+        route_no_trains: "Il n'y a pas de train sur cette ligne de train"
+        current_times: 'Heure actuelle: '
+      index:
+        plural: "Liste des itinéraires de train: "
+        route_name: "Titre de l'itinéraire de train "
+        new: "Créer un itinéraire de train "
+      new:
+        title: 'Nouvel itinéraire de train'
+      form:
+        sumbit: '%{action} itinéraire de train '
+    trains:
+      index:
+        new: 'Nouveau train'
+      show:
+        no_route: 'Ce train ne suit encore aucun itinéraire de train.'
+        train_route: 'Ce train suit les itinéraires suivants:'
+        on_station: 'Sur la gare:'
+      plural: 'Liste des trains'
+      form:
+        submit: '%{action} train'
+        direction: 'Compte à rebours du chariot depuis la queue du train '
+    tickets:
+      index:
+        title: 'Contrôleur de billets'
+        new: 'Créer un ticket'
+      form:
+        sumbit: 'Créer un ticket'
+      show:
+        bought_by: 'Billet acheté par: '
+      first_name: 'Prénom du passager: '
+      last_name: 'Nom du passager: '
+      passport_number: 'Numéro de passeport du passager: '
+      first_station: 'Première station:'
+      last_station: 'Dernière station: '
+      ticket_train_number: 'Numéro de train: '
+      user_buy_ticket: 'Acheter un billet'
+      user_tickets: 'Vos billets:'
+    railway_stations:
+      plural: 'Gares ferroviaires'
+      index:
+        new: 'Pour créer une gare'
+      new:
+        title: 'Nouvelle gare'
+      form:
+        submit: '%{action} gare'
+      show:
+        no_routes: "Cette gare n'est encore incluse sur aucun trajet de train."
+        routes: 'Cette gare est incluse sur les prochains itinéraires de train: '
+    cars:
+      new:
+        title: 'Nouveau chariot'
+      form:
+        car_type: 'Nouveau wagon: '
+        car_number: 'Numéro de wagon: '
+        car_top_seats: 'Top sièges: '
+        car_lower_seats: 'Sièges inférieurs: '
+        car_side_seats_top: 'Sièges latéraux supérieurs: '
+        car_side_seats_bottom: 'Sièges latéraux inférieurs: '
+        car_sitting_seats: 'Sièges assis: '
+        attach_train: 'Numéro de train de wagon: '
+      show:
+        economy_car: 'Wagon économique '
+        coupe_car: 'Voiture de coupe'
+        sitting_car: 'Chariot assis'
+        sleeping_car: 'Voiture de sommeil'
+        car_seats: 'Nombre total de sièges en voiture:'
