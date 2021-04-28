@@ -10,30 +10,30 @@
 </p>
 
 <li>
-<p>
-  <% if @route.railway_stations.empty? %>
-    <%= t('.no_stations') %>
-  <% else %>
-  <ul>
-    <% @route.railway_stations.ordered.each do |station| %>
-      <li><%= station.title %></li>
-      <%= form_tag update_position_admin_railway_station_path(station.id), method: :post do %>
-        <%= hidden_field_tag :route_id, @route.id %>
-        <%= label_tag :number %>
-        <%= number_field_tag :number, station.index(@route.id) %>
-        <%= submit_tag t('common.save') %>
+  <p>
+    <% if @route.railway_stations.empty? %>
+      <%= t('.no_stations') %>
+    <% else %>
+    <ul>
+      <% @route.railway_stations.ordered.each do |station| %>
+        <li><%= station.title %></li>
+        <%= form_tag update_position_admin_railway_station_path(station.id), method: :post do %>
+          <%= hidden_field_tag :route_id, @route.id %>
+          <%= label_tag :number %>
+          <%= number_field_tag :number, station.index(@route.id) %>
+          <%= submit_tag t('common.save') %>
+        <% end %>
+        <%= form_tag update_time_admin_railway_station_path(station.id), method: :post do %>
+          <%= hidden_field_tag :route_id, @route.id %>
+          <%= label_tag :departure_time, t('.departure_time') %>
+          <%= datetime_local_field :departure_time, station.departure_time(@route.id) %>
+          <%= label_tag :arrival_time, t('.arrival_time') %>
+          <%= datetime_local_field :arrival_time, station.arrival_time(@route.id) %>
+          <%= label_tag "#{t('.current_times')} #{station.departure_time(@route.id)} - #{station.arrival_time(@route.id)}" %>
+          <%= submit_tag t('.update_time') %>
+        <% end %>
       <% end %>
-      <%= form_tag update_time_admin_railway_station_path(station.id), method: :post do %>
-        <%= hidden_field_tag :route_id, @route.id %>
-        <%= label_tag :departure_time, t('.departure_time') %>
-        <%= datetime_local_field :departure_time, station.departure_time(@route.id) %>
-        <%= label_tag :arrival_time, t('.arrival_time') %>
-        <%= datetime_local_field :arrival_time, station.arrival_time(@route.id) %>
-        <%= label_tag "#{t('.current_times')} #{station.departure_time(@route.id)} - #{station.arrival_time(@route.id)}" %>
-        <%= submit_tag t('.update_time') %>
-      <% end %>
-    <% end %>
-  </ul>
+    </ul>
   <% end %>
 </li>
 
@@ -52,7 +52,5 @@
     <% end %>
   </ul>
 <% end %>
-
-
 <%= link_to t('common.edit'), edit_admin_route_path(@route) %> |
 <%= link_to t('common.back'), admin_routes_path %>
