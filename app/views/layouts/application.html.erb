@@ -9,6 +9,7 @@
 
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="languages.css.scss">
 
 
   <!-- For all other devices -->
@@ -33,12 +34,24 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          <li><%= button_to "Вийти", destroy_user_session_path, method: :delete  %></li>
+          <li><%= link_to t('common.sign_out'), destroy_user_session_path, method: :delete  %></li>
           <% if current_user.admin? %>
-            <li><%= link_to "Сторінка адміністратора", admin_railway_stations_path  %></li>
+            <li><%= link_to t('common.admin_page'), admin_railway_stations_path  %></li>
+            <nav class="lan">
+              <ul class="menu-ctn">
+                <li id="menu">
+                  Languages
+                  <ul id="dropdown">
+                    <li>🇬🇧<%= link_to 'English', root_path(locale: :en) %></li>
+                    <li>🇺🇦<%= link_to 'Укр.', root_path(locale: :ua) %></li>
+                    <li>🇫🇷<%= link_to 'Français', root_path(locale: :fr)%></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
             <% end %>
           <% else %>
-          <li><%= link_to "Увійти", new_user_session_path  %></li>
+          <li><%= link_to t('common.sign_in'), new_user_session_path  %></li>
           <% end %>
       </ul>
     </div>
