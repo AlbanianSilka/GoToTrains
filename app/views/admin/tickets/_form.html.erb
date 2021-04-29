@@ -1,7 +1,6 @@
 <%= form_with(model: ticket) do |form| %>
   <%= render 'common/errors', resource: @ticket %>
 
-
   <div class="field">
     <%= form.label :user_first_name, t('admin.tickets.first_name') %>
     <%= form.text_field :user_first_name%>
@@ -11,9 +10,11 @@
     <%= form.number_field :user_passport %>
     <%= form.label :train_id, t('activerecord.attributes.train.number')%>
     <%= form.collection_select :train_id, Train.all, :id, :number %>
+    <%= form.label :route_id, 'Routes' %>
+    <%= form.collection_select :route_id, Route.all, :id, :name, include_blank: 'choose route' %>
     <%= form.label :first_station_id, t('admin.tickets.first_station') %>
     <%= form.grouped_collection_select :first_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
-    <%= form.label :first_station_id, t('admin.tickets.last_station') %>
+    <%= form.label :last_station_id, t('admin.tickets.last_station') %>
     <%= form.grouped_collection_select :last_station_id, Route.order(:name), :railway_stations, :name, :id, :title, include_blank: true%>
   </div>
 
