@@ -15,7 +15,9 @@ module GoToTrains
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
+    config.i18n.available_locales = [:ua, :en, :fr]
     config.i18n.default_locale = :ua
+    config.i18n.fallbacks = true
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     # config.active_record.raise_in_transactional_callbacks = false

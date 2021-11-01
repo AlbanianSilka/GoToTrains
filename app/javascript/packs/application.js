@@ -7,7 +7,14 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-
+require('jquery')
+require('packs/search')
+require('packs/railway_stations')
+require('packs/routes')
+require('packs/trains')
+require('packs/cars')
+require('packs/dropdown')
+require('packs/tickets')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

@@ -1,0 +1,8 @@
+<p>Привіт, <%= @user.first_name%></p>
+
+<p>Ви повернули квиток за маршрутом <%= @ticket.route_name %>></p>
+<% if @user.admin? %>
+  <p>Усі квитки ви можете подивитись <%= link_to "тут", admin_tickets_url %></p>
+<% else %>
+  <p>Усі свої квитки ви можете подивитись <%= link_to "тут", tickets_url %></p>
+<% end %>

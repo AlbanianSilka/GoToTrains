@@ -19,7 +19,7 @@
       <td><%= ticket.first_station.title%></td>
       <td><%= ticket.last_station.title %></td>
       <td><%= link_to 'Показать билет', ticket %></td>
-      <td><%= link_to 'Вернуть билет', tickets_path(ticket), method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот билет?' } %></td>
+      <td><%= button_to 'Вернуть билет', ticket, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот билет?' } %></td>
         <% else %>
         <% nil %>
       <% end %>

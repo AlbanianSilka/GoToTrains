@@ -37,6 +37,7 @@ module Admin
     end
 
     def destroy
+      @ticket = Ticket.find(params[:id])
       @ticket.destroy
 
       redirect_to admin_tickets_path

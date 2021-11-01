@@ -9,10 +9,10 @@ ua:
       route: 'Маршрут'
       railway_station_route: 'Маршрут'
       car: 'Вагон'
-      admin:
-      tickets: 'Квиток'
-       attributes:
-         user: 'Користувач'
+#      admin:
+#      tickets: 'Квиток'
+#       attributes:
+#         user: 'Користувач'
     attributes:
       show: 'Показати'
       edit: 'Відредагувати'

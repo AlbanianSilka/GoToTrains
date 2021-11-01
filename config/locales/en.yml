@@ -30,4 +30,100 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  common:
+    cancel: 'Cancel'
+    destroy: 'Delete'
+    show: 'Show'
+    save: 'Save'
+    hello: 'Hello, '
+    sign_in: 'Sign In'
+    sign_out: 'Sign Out'
+    admin: 'Admin'
+    back: 'Back'
+    edit: 'Edit'
+    errors: 'An error occurred while filling the form'
+    admin_page: 'Admin page'
+  tickets:
+    ticket_show_form: 'Ticket number Train number First station Last station'
+  admin:
+    welcome:
+      index:
+        admin_title: 'Admin page'
+        train_list: 'Trains list'
+        routes_list: 'Routes list'
+        station_list: 'Railway Stations list'
+        ticket_list: 'Tickets list'
+    routes:
+      show:
+        no_stations: 'There is no stations on this route'
+        stations_on_route: 'Stations in route: '
+        departure_time: 'Departure time:'
+        arrival_time: 'Arrival time:'
+        update_time: 'Update time'
+        trains_on_route: 'Trains on route:'
+        route_no_trains: 'There is no trains on this route'
+        current_times: 'Current time: '
+      index:
+        plural: 'Routes list'
+        route_name: 'Route name'
+        new: 'Create route'
+      new:
+        title: 'New route'
+      form:
+        sumbit: '%{action} route'
+    trains:
+      index:
+        new: 'New train'
+      show:
+        no_route: 'This train does not follow any route yet.'
+        train_route: 'This train follow next routes:'
+        on_station: 'On station:'
+      plural: 'List of trains'
+      form:
+        submit: '%{action} train'
+        direction: 'Carriage countdown from the tail of the train '
+    tickets:
+      index:
+        title: 'Tickets controller'
+        new: 'Create ticket'
+      form:
+        sumbit: 'Create ticket'
+      show:
+        bought_by: 'Ticket bought by: '
+      first_name: 'Passenger first name:'
+      last_name: 'Passenger last name: '
+      passport_number: 'Passenger passport number: '
+      first_station: 'First station: '
+      last_station: 'Last station: '
+      ticket_train_number: 'Train number: '
+      user_buy_ticket: 'Buy ticket'
+      user_tickets: 'Your tickets:'
+    railway_stations:
+      plural: 'Railway stations'
+      index:
+        new: 'Create railway station'
+      new:
+        title: 'New railway station'
+      form:
+        submit: '%{action} station'
+      show:
+        no_routes: 'This station is not included on any route yet.'
+        routes: 'This station included on next routes: '
+    cars:
+      new:
+        title: 'New carriage'
+      form:
+        car_type: 'Carriage type: '
+        car_number: 'Carriage number: '
+        car_top_seats: 'Top seats: '
+        car_lower_seats: 'Bottom seats: '
+        car_side_seats_top: 'Top side seats: '
+        car_side_seats_bottom: 'Bottom side seats: '
+        car_sitting_seats: 'Sitting seats: '
+        attach_train: 'Carriage train number: '
+      show:
+        economy_car: 'Economy carriage'
+        coupe_car: 'Coupe carriage'
+        sitting_car: 'Sitting carriage'
+        sleeping_car: 'Sleep carriage'
+        car_seats: 'Total seats in carriage:'

@@ -1,6 +1,5 @@
 <tr>
   <td><%= ticket.id %></td>
-<!--  <td><%#= ticket.user.id %></td>-->
   <td><%= ticket.user_first_name %></td>
   <td><%= ticket.user_last_name %></td>
   <td><%= ticket.user_passport %></td>
@@ -8,5 +7,5 @@
   <td><%= ticket.last_station.title %></td>
   <td><%= link_to t('activerecord.attributes.show'), [:admin, ticket] %></td>
   <td><%= link_to t('activerecord.attributes.edit'), edit_admin_ticket_path(ticket) %></td>
-  <td><%= link_to t('activerecord.attributes.destroy'), [:admin, ticket], method: :delete, data: { confirm: t('activerecord.destroy_confirm') } %></td>
+  <td><%= link_to t('activerecord.attributes.destroy'), admin_ticket_path(ticket), method: :delete, data: { confirm: t('activerecord.destroy_confirm') } %></td>
 </tr>
